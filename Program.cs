@@ -1,14 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using logregDemo1.Models;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-//add session support
+
+// Add session support
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
-//creates the db connection string
+
+// Create the DB connection string
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<MyContext>(options =>
@@ -25,11 +28,8 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseSession();
-
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(

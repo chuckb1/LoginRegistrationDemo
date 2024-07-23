@@ -1,0 +1,16 @@
+﻿{
+  "manifestVersion": 1,
+  "deployments": {
+    "aspNetCoreWeb": [
+      {
+        "name": "LoginRegistrationDemo",
+        "parameters": {
+          "appBundle": "./",
+          "iisPath": "/",
+          "iisWebSite": "Default Web Site"
+        }
+      }
+    ]
+  }
+}
+
